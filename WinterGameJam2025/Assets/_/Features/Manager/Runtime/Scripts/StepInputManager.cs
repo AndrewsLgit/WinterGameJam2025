@@ -74,7 +74,7 @@ namespace Manager.Runtime
                     return;
                 }
                 
-                _stepTimer = new CountdownTimer(_currentStep.CurrentStepDuration);
+                _stepTimer = new CountdownTimer(_currentStep.CurrentStepDuration * 0.001f); // * 0.001f to turn milliseconds into seconds
                 _stepTimer?.Start();
                 _stepTimer.OnTimerStop += _currentStep.IncrementCurrentStepIndex;
                 _stepTimer.OnTimerTick += progress => Info($"Timer running with progress {progress} || Step index: {_currentStep.CurrentStepIndex}", this);
