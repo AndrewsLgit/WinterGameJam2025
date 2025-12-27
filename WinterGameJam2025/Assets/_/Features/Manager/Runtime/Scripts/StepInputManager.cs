@@ -1,7 +1,9 @@
-
+using System;
 using UnityEngine;
 using Foundation.Runtime;
+using Player.Runtime;
 using SharedData.Runtime;
+using Tools.Runtime;
 
 namespace Manager.Runtime
 {
@@ -27,22 +29,137 @@ namespace Manager.Runtime
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-   
+
+        private void Start()
+        {
+            _inputRouter = PlayerInputRouter.Instance;
+            _currentStep.Reset();
+        }
+
+        private void Update()
+        {
+            if (_stepTimer is {IsRunning: true})
+                _stepTimer.Tick(Time.deltaTime);
+        }
+
+        private void OnEnable()
+        {
+            SubscribeToInputEvents();
+
+            _currentStep.OnCurrentStepComplete += HandleStepComplete;
+        }
+
+        private void OnDisable()
+        {
+            UnsubscribeFromInputEvents();
+            _currentStep.OnCurrentStepComplete -= HandleStepComplete;
+        }
+
         #endregion
 
         #region Main Methods
 
+        private void HandleTimer(bool isBeingPressed)
+        {
+            if (!_isStepInProgress && isBeingPressed)
+            {
+                if (_currentStep.CurrentStepDuration <= 0)
+                {
+                    _currentStep.IncrementCurrentStepIndex();
+                    _isStepComplete = true;
+                    _stepTimer?.Stop();
+                    if (_stepTimer != null) _stepTimer.OnTimerStop -= _currentStep.IncrementCurrentStepIndex;
+                    _stepTimer = null;
+                    
+                    return;
+                }
+                
+                _stepTimer = new CountdownTimer(_currentStep.CurrentStepDuration);
+                _stepTimer?.Start();
+                _stepTimer.OnTimerStop += _currentStep.IncrementCurrentStepIndex;
+                _stepTimer.OnTimerTick += progress => Info($"Timer running with progress {progress} || Step index: {_currentStep.CurrentStepIndex}", this);
+
+                _isStepInProgress = true;
+                _isStepComplete = false;
+
+                return;
+            }
+
+            if (!isBeingPressed && _stepTimer != null)
+            {
+                _stepTimer?.Pause();
+                return;
+            }
+            
+            _stepTimer?.Resume();
+        }
+        
    
         #endregion
 
         #region Utils
 
-   
+        private void HandleStepComplete()
+        {
+            _isStepInProgress = false;
+            _isStepComplete = true;
+
+            if (_stepTimer == null) return;
+            _stepTimer.OnTimerStop -= _currentStep.IncrementCurrentStepIndex;
+            _stepTimer = null;
+            
+            Info($"Completed step, new index: {_currentStep.CurrentStepIndex}", this);
+        }
+
+        private void SubscribeToInputEvents()
+        {
+            _inputRouter ??= PlayerInputRouter.Instance;
+
+            if (_inputRouter is null)
+            {
+                Error("Input router singleton was not found.");
+                return;
+            }
+            _inputRouter.OnLeftStepTriggered += InputRouter_OnLeftStepTriggered;
+            _inputRouter.OnRightStepTriggered += InputRouter_OnRightStepTriggered;
+        }
+
+        private void UnsubscribeFromInputEvents()
+        {
+            _inputRouter ??= PlayerInputRouter.Instance;
+
+            if (_inputRouter is null)
+            {
+                Error("Input router singleton was not found.");
+                return;
+            }
+            _inputRouter.OnLeftStepTriggered -= InputRouter_OnLeftStepTriggered;
+            _inputRouter.OnRightStepTriggered -= InputRouter_OnRightStepTriggered;
+        }
+
+        private void InputRouter_OnRightStepTriggered(bool isBeingPressed)
+        {
+
+            HandleTimer(isBeingPressed);
+            
+        }
+
+        private void InputRouter_OnLeftStepTriggered(bool isBeingPressed)
+        {
+            HandleTimer(isBeingPressed);
+        }
+
         #endregion
 
         #region Private & Protected
 
         [SerializeField] private CurrentStep_Data _currentStep;
+
+        private PlayerInputRouter _inputRouter;
+        private float? _currentStepTimer;
+        private bool _isStepComplete;
+        private bool _isStepInProgress;
+        private CountdownTimer _stepTimer;
 
         #endregion
     }
