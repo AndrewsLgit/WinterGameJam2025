@@ -892,7 +892,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 98cfac42bb367284196fc01e6cf7a46e, type: 2}
     - target: {fileID: 919132149155446097, guid: 85f916663c70f56449278bbdc793a7dd, type: 3}
       propertyPath: m_Name
-      value: 3D_VTC_TV
+      value: 3D_TV
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
