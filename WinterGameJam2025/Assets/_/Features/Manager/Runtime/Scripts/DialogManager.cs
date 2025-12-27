@@ -13,7 +13,7 @@ namespace Manager.Runtime
         [field: SerializeField]
         public StepDialogEvent[] StepDialogEvent { get; private set; }
         
-        public DialogManager Instance { get; private set; }
+        public static DialogManager Instance { get; private set; }
    
         #endregion
 

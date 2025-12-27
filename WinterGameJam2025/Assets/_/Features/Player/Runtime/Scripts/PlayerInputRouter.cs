@@ -11,7 +11,7 @@ namespace Player.Runtime
     {
         #region Public
 
-        public PlayerInputRouter Instance { get; private set; }
+        public static PlayerInputRouter Instance { get; private set; }
         
         public event Action<bool> OnLeftStepTriggered;
         public event Action<bool> OnRightStepTriggered;
@@ -40,17 +40,18 @@ namespace Player.Runtime
         public void LeftStep(InputAction.CallbackContext ctx)
         {
             if (ctx is { performed: false, canceled: false }) return;
-            var value =  ctx.ReadValue<bool>();
-            if (ctx.canceled) value = false;
+            bool value = !ctx.canceled;
             
+            Info($"Left step triggered with value: {value}");
             OnLeftStepTriggered?.Invoke(value);
         }
 
         public void RightStep(InputAction.CallbackContext ctx)
         {
             if (ctx is { performed: false, canceled: false }) return;
-            var value =  ctx.ReadValue<bool>();
-            if (ctx.canceled) value = false;
+            bool value = !ctx.canceled;
+            
+            Info($"Right step triggered with value: {value}");
             
             OnRightStepTriggered?.Invoke(value);
         }
@@ -63,7 +64,6 @@ namespace Player.Runtime
         #endregion
 
         #region Private & Protected
-
    
         #endregion
     }
