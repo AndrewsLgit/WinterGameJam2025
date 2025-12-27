@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Unlit_Props
+  m_Name: M_Unlit_Props 1
   m_Shader: {fileID: -6465566751694194690, guid: fe4f53bd2c9d9b74faca6ef1ee52e433, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: 74174dc6c11dc1f4aa29ecb834050f03, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -75,8 +75,8 @@ Material:
     - _Snow_Opacity: 0.3
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _SnowColor: {r: 0.96981126, g: 0.96981126, b: 0.96981126, a: 0}
+    - _SnowColor: {r: 1, g: 1, b: 1, a: 0}
     - _Snow_Direction: {r: 0, g: 1, b: 0.1, a: 0}
-    - _Snow_power: {r: 0.46, g: 0.73, b: 0, a: 0}
+    - _Snow_power: {r: 0.53, g: 0.73, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
