@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8007eeb5716454827931391831dde57d, type: 3}
-  m_Name: SO_DialogNode_Number2
+  m_Name: SO_DialogNode_Number18
   m_EditorClassIdentifier: SharedData.Runtime::SharedData.Runtime.SO_DialogNode
-  DialogText: I'm not sure who decided it, nor why, but here, everyone refers to
-    Snow as a she.
+  DialogText: But now that he has left me, I've opened myself to her presence. I'm
+    not quite sure why.

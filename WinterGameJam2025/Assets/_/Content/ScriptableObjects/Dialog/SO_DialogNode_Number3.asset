@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8007eeb5716454827931391831dde57d, type: 3}
   m_Name: SO_DialogNode_Number3
   m_EditorClassIdentifier: SharedData.Runtime::SharedData.Runtime.SO_DialogNode
-  DialogText: I've met her... you know?
+  DialogText: I've met her. A long while ago now. And I keep seeing her occasionally.
+    It comes in waves, you know?

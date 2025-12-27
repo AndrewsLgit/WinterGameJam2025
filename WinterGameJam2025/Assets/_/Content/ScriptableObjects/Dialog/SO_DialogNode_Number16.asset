@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8007eeb5716454827931391831dde57d, type: 3}
-  m_Name: SO_DialogNode_Number2
+  m_Name: SO_DialogNode_Number16
   m_EditorClassIdentifier: SharedData.Runtime::SharedData.Runtime.SO_DialogNode
-  DialogText: I'm not sure who decided it, nor why, but here, everyone refers to
-    Snow as a she.
+  DialogText: Well, that's maybe not quite true. My dad saw something in her. Back
+    then, when we first met her, he instantly saw something I was unable to see.
