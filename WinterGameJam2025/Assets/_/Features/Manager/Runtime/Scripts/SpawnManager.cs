@@ -13,7 +13,7 @@ namespace Manager.Runtime
          [field: SerializeField]
          public ObjectSpawnEvent[] SpawnEvent { get; private set; }
          
-         public SpawnManager Instance { get; private set; }
+         public static SpawnManager Instance { get; private set; }
    
         #endregion
 

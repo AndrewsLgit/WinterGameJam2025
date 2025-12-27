@@ -7,9 +7,9 @@ namespace Manager.Runtime
 {
     public class StepInputManager : FBehaviour
     {
-         #region Public
+        #region Public
 
-         public StepInputManager Instance { get; private set; }
+        public static StepInputManager Instance { get; private set; }
    
         #endregion
 
