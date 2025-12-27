@@ -72,4 +72,172 @@ MonoBehaviour:
       <From>k__BackingField: 20
       <To>k__BackingField: 22
     <TriggerPressure>k__BackingField: 1000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: cdda2c6e07b0cac4390cf32cd3be0d01, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 23
+      <To>k__BackingField: 28
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 30
+      <To>k__BackingField: 33
+    <TriggerPressure>k__BackingField: 1000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 20bbf9f3faafc214b9417af786fb4f77, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 34
+      <To>k__BackingField: 34
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 36
+      <To>k__BackingField: 37
+    <TriggerPressure>k__BackingField: 1000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 97882f556c36fd04fa1752436a6a0494, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 38
+      <To>k__BackingField: 43
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 45
+      <To>k__BackingField: 48
+    <TriggerPressure>k__BackingField: 1000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: c2ebfe85a20665843babcb3b0caca864, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 49
+      <To>k__BackingField: 51
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 53
+      <To>k__BackingField: 54
+    <TriggerPressure>k__BackingField: 1000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: b2b10eb8901ef6846b31b7908b7faf57, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 55
+      <To>k__BackingField: 60
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 62
+      <To>k__BackingField: 65
+    <TriggerPressure>k__BackingField: 1000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 4fa4a7aa71237274a983c1367c4fe503, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 66
+      <To>k__BackingField: 70
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 72
+      <To>k__BackingField: 74
+    <TriggerPressure>k__BackingField: 1000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 77b6a3caa10bb7441a9cefa6cac76ec8, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 75
+      <To>k__BackingField: 78
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 80
+      <To>k__BackingField: 82
+    <TriggerPressure>k__BackingField: 1000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 96098fe454eaef946bb0daedbc996429, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 83
+      <To>k__BackingField: 85
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 86
+      <To>k__BackingField: 87
+    <TriggerPressure>k__BackingField: 2000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 245a77e30c252d34eb9d33d10aa2100a, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 88
+      <To>k__BackingField: 88
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 89
+      <To>k__BackingField: 90
+    <TriggerPressure>k__BackingField: 2000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 641eb9e6aa794494397f620205f3cb12, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 91
+      <To>k__BackingField: 95
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 96
+      <To>k__BackingField: 97
+    <TriggerPressure>k__BackingField: 2000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 5d16b31e073a7604e9d1e6fcd2314414, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 98
+      <To>k__BackingField: 100
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 101
+      <To>k__BackingField: 102
+    <TriggerPressure>k__BackingField: 2000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 8c7dcf17f2c6bfd47a5389b15a45a261, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 103
+      <To>k__BackingField: 105
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 106
+      <To>k__BackingField: 107
+    <TriggerPressure>k__BackingField: 2000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 2369fcb85a960fb40a1d11a712aa00e9, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 108
+      <To>k__BackingField: 116
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 118
+      <To>k__BackingField: 121
+    <TriggerPressure>k__BackingField: 1000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 4cc2e5ad32b8f24409d9f2af2f45d66f, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 122
+      <To>k__BackingField: 122
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 124
+      <To>k__BackingField: 125
+    <TriggerPressure>k__BackingField: 1000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: f7bc833401192d94ba9ce70c5e99719c, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 126
+      <To>k__BackingField: 129
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 130
+      <To>k__BackingField: 131
+    <TriggerPressure>k__BackingField: 2000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 6c803e26566019749b6946273dc7ff50, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 132
+      <To>k__BackingField: 136
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 137
+      <To>k__BackingField: 139
+    <TriggerPressure>k__BackingField: 2000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: ace9badad05da8740a7fcc2f480595b2, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 140
+      <To>k__BackingField: 142
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 143
+      <To>k__BackingField: 145
+    <TriggerPressure>k__BackingField: 2000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 6dc9fe35acb44074198fe7d17ed94657, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 146
+      <To>k__BackingField: 149
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 150
+      <To>k__BackingField: 152
+    <TriggerPressure>k__BackingField: 2000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 0f3b2aaa87e389d4491f67027831dbf7, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 153
+      <To>k__BackingField: 154
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 155
+      <To>k__BackingField: 156
+    <TriggerPressure>k__BackingField: 3000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: f78786f986125ec4589ac6b416937064, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 157
+      <To>k__BackingField: 158
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 159
+      <To>k__BackingField: 160
+    <TriggerPressure>k__BackingField: 3000
+  - <DialogNode>k__BackingField: {fileID: 11400000, guid: 2c1162ebbaa811f46929f30752b7f72b, type: 2}
+    <DialogEntryRange>k__BackingField:
+      <From>k__BackingField: 161
+      <To>k__BackingField: 162
+    <DialogExitRange>k__BackingField:
+      <From>k__BackingField: 165
+      <To>k__BackingField: 170
+    <TriggerPressure>k__BackingField: 3000
   _currentStep: {fileID: 11400000, guid: 28f6a9c3e0f864419a61dd2477c8e742, type: 2}
