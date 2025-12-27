@@ -3,7 +3,7 @@ using UnityEngine;
 namespace SharedData.Runtime.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "SO_DialogNode", menuName = "Data/DialogNode")]
-    public class SO_DialogNode : ScriptableObject
+    public class DialogNode_Data : ScriptableObject
     {
         [TextArea, Tooltip("Dialog text to be displayed.")] 
         public string DialogText;

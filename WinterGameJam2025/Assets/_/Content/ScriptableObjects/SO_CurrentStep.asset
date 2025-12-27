@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8007eeb5716454827931391831dde57d, type: 3}
-  m_Name: SO_DialogNode_Number1
-  m_EditorClassIdentifier: SharedData.Runtime::SharedData.Runtime.SO_DialogNode
-  DialogText: 
+  m_Script: {fileID: 11500000, guid: ec43fbe99c1ff4a38976f95001407e65, type: 3}
+  m_Name: SO_CurrentStep
+  m_EditorClassIdentifier: SharedData.Runtime::SharedData.Runtime.CurrentStep_Data
+  CurrentStepIndex: 0
+  CurrentStepDuration: 0
+  IsStepComplete: 0
