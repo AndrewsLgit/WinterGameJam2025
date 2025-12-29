@@ -140,7 +140,7 @@ MonoBehaviour:
     <DialogExitRange>k__BackingField:
       <From>k__BackingField: 77
       <To>k__BackingField: 79
-    <TriggerPressure>k__BackingField: 500
+    <TriggerPressure>k__BackingField: 1500
   - <DialogNode>k__BackingField: {fileID: 11400000, guid: 4cc2e5ad32b8f24409d9f2af2f45d66f, type: 2}
     <DialogEntryRange>k__BackingField:
       <From>k__BackingField: 80
