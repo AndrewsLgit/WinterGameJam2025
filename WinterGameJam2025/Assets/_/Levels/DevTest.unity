@@ -561,6 +561,82 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: _dialogStepEventContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 9dedc5c0e4837444faceb5aac0e0732c, type: 2}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[0].<DialogNode>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 626e2e5bbc93f415f99e8b3535f88f08, type: 2}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[1].<DialogNode>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 6670873beb6b345c9825723f0c6a7472, type: 2}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[2].<DialogNode>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 4aab6474f2ec94891824ee0602653e08, type: 2}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[1].<TriggerPressure>k__BackingField
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[2].<TriggerPressure>k__BackingField
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[0].<DialogExitRange>k__BackingField.<To>k__BackingField
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[1].<DialogExitRange>k__BackingField.<To>k__BackingField
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[2].<DialogExitRange>k__BackingField.<To>k__BackingField
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[0].<DialogEntryRange>k__BackingField.<To>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[1].<DialogEntryRange>k__BackingField.<To>k__BackingField
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[2].<DialogEntryRange>k__BackingField.<To>k__BackingField
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[0].<DialogExitRange>k__BackingField.<From>k__BackingField
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[1].<DialogExitRange>k__BackingField.<From>k__BackingField
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[2].<DialogExitRange>k__BackingField.<From>k__BackingField
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[0].<DialogEntryRange>k__BackingField.<From>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[1].<DialogEntryRange>k__BackingField.<From>k__BackingField
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300388228095555487, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
+      propertyPath: <StepDialogEvents>k__BackingField.Array.data[2].<DialogEntryRange>k__BackingField.<From>k__BackingField
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 7512792054608804826, guid: 0ecdf937cc25940beb046eb15edcb08b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

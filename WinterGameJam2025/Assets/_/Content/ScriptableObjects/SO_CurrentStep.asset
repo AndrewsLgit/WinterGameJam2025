@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec43fbe99c1ff4a38976f95001407e65, type: 3}
   m_Name: SO_CurrentStep
   m_EditorClassIdentifier: SharedData.Runtime::SharedData.Runtime.CurrentStep_Data
-  CurrentStepIndex: 0
+  <CurrentStepIndex>k__BackingField: 15
   CurrentStepDuration: 0
+  CurrentStepProgress: 1
   IsStepComplete: 0

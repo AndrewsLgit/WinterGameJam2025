@@ -34,6 +34,10 @@ namespace Manager.Runtime
         {
             _inputRouter = PlayerInputRouter.Instance;
             _currentStep.Reset();
+            
+            SubscribeToInputEvents();
+
+            _currentStep.OnCurrentStepComplete += HandleStepComplete;
         }
 
         private void Update()
@@ -44,9 +48,9 @@ namespace Manager.Runtime
 
         private void OnEnable()
         {
-            SubscribeToInputEvents();
-
-            _currentStep.OnCurrentStepComplete += HandleStepComplete;
+            // SubscribeToInputEvents();
+            //
+            // _currentStep.OnCurrentStepComplete += HandleStepComplete;
         }
 
         private void OnDisable()
@@ -65,10 +69,15 @@ namespace Manager.Runtime
             {
                 if (_currentStep.CurrentStepDuration <= 0)
                 {
+                    SetTimerProgressToData(0f);
                     _currentStep.IncrementCurrentStepIndex();
                     _isStepComplete = true;
                     _stepTimer?.Stop();
-                    if (_stepTimer != null) _stepTimer.OnTimerStop -= _currentStep.IncrementCurrentStepIndex;
+                    if (_stepTimer != null)
+                    {
+                        _stepTimer.OnTimerStop -= _currentStep.IncrementCurrentStepIndex;
+                        _stepTimer.OnTimerTick -= SetTimerProgressToData;
+                    }
                     _stepTimer = null;
                     
                     return;
@@ -77,7 +86,7 @@ namespace Manager.Runtime
                 _stepTimer = new CountdownTimer(_currentStep.CurrentStepDuration * 0.001f); // * 0.001f to turn milliseconds into seconds
                 _stepTimer?.Start();
                 _stepTimer.OnTimerStop += _currentStep.IncrementCurrentStepIndex;
-                _stepTimer.OnTimerTick += progress => Info($"Timer running with progress {progress} || Step index: {_currentStep.CurrentStepIndex}", this);
+                _stepTimer.OnTimerTick += SetTimerProgressToData;
 
                 _isStepInProgress = true;
                 _isStepComplete = false;
@@ -106,9 +115,18 @@ namespace Manager.Runtime
 
             if (_stepTimer == null) return;
             _stepTimer.OnTimerStop -= _currentStep.IncrementCurrentStepIndex;
+            _stepTimer.OnTimerTick -= SetTimerProgressToData;
             _stepTimer = null;
             
             Info($"Completed step, new index: {_currentStep.CurrentStepIndex}", this);
+        }
+
+        private void SetTimerProgressToData(float progress)
+        {
+            // if (_stepTimer == null) return;
+            
+            _currentStep.CurrentStepProgress = 1f - progress;
+            Info($"Timer running with progress {progress} || Step index: {_currentStep.CurrentStepIndex}", this);
         }
 
         private void SubscribeToInputEvents()
