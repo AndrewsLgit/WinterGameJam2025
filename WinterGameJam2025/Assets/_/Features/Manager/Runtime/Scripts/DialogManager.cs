@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using Foundation.Runtime;
 using SharedData.Runtime;
@@ -34,10 +33,61 @@ namespace Manager.Runtime
         private void Start()
         {
             StepDialogEvents = _dialogStepEventContainer.StepDialogEvents;
-            _currentStepData.CurrentStepDuration = StepDialogEvents[0].TriggerPressure;
             _eventArrayLength = StepDialogEvents.Length;
+            
+            if(_eventArrayLength > 0)
+                _currentStepData.CurrentStepDuration = StepDialogEvents[0].TriggerPressure;
+            
+            CurrentStepData_OnStepIndexChanged();
 
             _currentStepData.OnCurrentStepComplete += CurrentStepData_OnStepIndexChanged;
+        }
+
+        
+        private void Update()
+        {
+            if (_eventIndex < 0)
+                return;
+
+            var evt = StepDialogEvents[_eventIndex];
+            int stepIndex = _currentStepData.CurrentStepIndex;
+            float timerProgress = _currentStepData.CurrentStepProgress;
+
+            if (stepIndex >= evt.DialogEntryRange.From &&
+                stepIndex <= evt.DialogEntryRange.To)
+            {
+                float entryProgress = ComputeRangeProgress(
+                    stepIndex,
+                    evt.DialogEntryRange,
+                    timerProgress
+                );
+
+                // Feed entryProgress to dialog UI (typewriter)
+                // Example: DialogView.SetRevealProgress(entryProgress);
+                Info($"Setting progress for DialogView {evt.DialogNode.DialogText} to {entryProgress}");
+                _dialogView.SetRevealProgress(entryProgress);
+                _dialogView.SetOpacity(1f);
+                return;
+            }
+            
+            if (stepIndex >= evt.DialogExitRange.From &&
+                     stepIndex <= evt.DialogExitRange.To)
+            {
+                float exitProgress = ComputeRangeProgress(
+                    stepIndex,
+                    evt.DialogExitRange,
+                    timerProgress
+                );
+
+                float opacity = 1f - exitProgress;
+                // Feed opacity to dialog UI
+                // Example: DialogView.SetOpacity(opacity);
+                _dialogView.SetOpacity(opacity);
+                Info($"Setting opacity for DialogView {evt.DialogNode.DialogText} to {opacity}");
+                return;
+            }
+            
+            _dialogView.SetOpacity(1f);
         }
 
         private void OnDestroy()
@@ -52,19 +102,36 @@ namespace Manager.Runtime
         {
             _eventIndex = -1;
             
-            var currentStepIndex = _currentStepData.CurrentStepIndex;
+            int currentStepIndex = _currentStepData.CurrentStepIndex;
 
             for (int i = 0; i < _eventArrayLength; i++)
             {
                 var evt = StepDialogEvents[i];
                 bool inEntry = currentStepIndex >= evt.DialogEntryRange.From && _currentStepData.CurrentStepIndex <= evt.DialogEntryRange.To;
                 bool inExit = currentStepIndex >= evt.DialogExitRange.From && _currentStepData.CurrentStepIndex <= evt.DialogExitRange.To;
-                
-                if (!inEntry && !inExit) continue;
+
+                if (!inEntry && !inExit)
+                {
+                    continue;
+                }
                 
                 _eventIndex = i;
                 _currentStepData.CurrentStepDuration = evt.TriggerPressure;
+
+                if (_eventIndex != _previousEventIndex)
+                {
+                    _dialogView.SetDialog(evt.DialogNode.DialogText);
+                    _dialogView.SetOpacity(1f); 
+                    _previousEventIndex = _eventIndex;
+                }
+                
+                return;
             }
+            
+            // if no dialog
+            _previousEventIndex = -1;
+            _dialogView.SetOpacity(1f);
+            //_dialogView.Hide();
         }
    
         #endregion
@@ -92,9 +159,13 @@ namespace Manager.Runtime
         private CurrentStep_Data _currentStepData;
         [SerializeField]
         private DialogStepEventContainer_Data _dialogStepEventContainer;
+        [SerializeField]
+        private DialogView _dialogView;
    
         private int _eventIndex = 0;
         private int _eventArrayLength;
+        private int _previousEventIndex;
+
         #endregion
     }
 }
