@@ -10,8 +10,7 @@ namespace Manager.Runtime
     {
         #region Public
 
-        [field: SerializeField]
-        public StepDialogEvent[] StepDialogEvent { get; private set; }
+        public StepDialogEvent[] StepDialogEvents { get; private set; }
         
         public static DialogManager Instance { get; private set; }
    
@@ -31,11 +30,32 @@ namespace Manager.Runtime
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        private void Start()
+        {
+            StepDialogEvents = _dialogStepEventContainer.StepDialogEvents;
+            _currentStepData.CurrentStepDuration = StepDialogEvents[0].TriggerPressure;
+            _eventArrayLength = StepDialogEvents.Length;
+        }
    
         #endregion
 
         #region Main Methods
 
+        private void CurrentStepData_OnStepIndexChanged(int oldIndex, int newIndex)
+        {
+            for (int i = 0; i < _eventArrayLength; i++)
+            {
+                if ((_currentStepData.CurrentStepIndex < StepDialogEvents[i].DialogEntryRange.From ||
+                     _currentStepData.CurrentStepIndex > StepDialogEvents[i].DialogEntryRange.To) &&
+                    (_currentStepData.CurrentStepIndex < StepDialogEvents[i].DialogExitRange.From ||
+                     _currentStepData.CurrentStepIndex > StepDialogEvents[i].DialogExitRange.To)) continue;
+                
+                _eventIndex = i;
+                _currentStepData.CurrentStepDuration = StepDialogEvents[i].TriggerPressure;
+                break;
+            }
+        }
    
         #endregion
 
@@ -47,8 +67,12 @@ namespace Manager.Runtime
         #region Private & Protected
 
         [SerializeField]
-        private CurrentStep_Data _currentStep;
+        private CurrentStep_Data _currentStepData;
+        [SerializeField]
+        private DialogStepEventContainer_Data _dialogStepEventContainer;
    
+        private int _eventIndex = 0;
+        private int _eventArrayLength;
         #endregion
     }
 }
