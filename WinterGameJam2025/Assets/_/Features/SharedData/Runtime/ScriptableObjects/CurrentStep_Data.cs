@@ -20,6 +20,7 @@ namespace SharedData.Runtime
             CurrentStepIndex++;
             IsLeftStep = !IsLeftStep;
             OnCurrentStepComplete?.Invoke();
+            CurrentStepProgress = 0f;
         }
 
         public void Reset()
