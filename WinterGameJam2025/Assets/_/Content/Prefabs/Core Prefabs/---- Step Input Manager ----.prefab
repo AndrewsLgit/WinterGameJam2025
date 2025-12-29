@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8354759096026270404}
   - component: {fileID: 2737499199557539655}
   m_Layer: 0
-  m_Name: '---- Step Input Manager ---- '
+  m_Name: ---- Step Input Manager ----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
