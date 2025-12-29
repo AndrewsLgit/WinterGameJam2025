@@ -65,25 +65,32 @@ namespace Manager.Runtime
 
         private void HandleTimer(bool isBeingPressed)
         {
+            
             if (!_isStepInProgress && isBeingPressed)
             {
-                if (_currentStep.CurrentStepDuration <= 0)
-                {
-                    SetTimerProgressToData(0f);
-                    _currentStep.IncrementCurrentStepIndex();
-                    _isStepComplete = true;
-                    _stepTimer?.Stop();
-                    if (_stepTimer != null)
-                    {
-                        _stepTimer.OnTimerStop -= _currentStep.IncrementCurrentStepIndex;
-                        _stepTimer.OnTimerTick -= SetTimerProgressToData;
-                    }
-                    _stepTimer = null;
-                    
-                    return;
-                }
+                // if (_currentStep.CurrentStepDuration <= 0) // TODO: create timer for 100-150ms when duration == 0
+                // {
+                //     SetTimerProgressToData(0f);
+                //     _currentStep.IncrementCurrentStepIndex();
+                //     _isStepComplete = true;
+                //     _stepTimer?.Stop();
+                //     if (_stepTimer != null)
+                //     {
+                //         _stepTimer.OnTimerStop -= _currentStep.IncrementCurrentStepIndex;
+                //         _stepTimer.OnTimerTick -= SetTimerProgressToData;
+                //     }
+                //     _stepTimer = null;
+                //     
+                //     return;
+                // }
+
+
+                var stepTime = _currentStep.CurrentStepDuration == 0
+                    ? 0.200f
+                    : _currentStep.CurrentStepDuration * 0.001f;
                 
-                _stepTimer = new CountdownTimer(_currentStep.CurrentStepDuration * 0.001f); // * 0.001f to turn milliseconds into seconds
+                
+                _stepTimer = new CountdownTimer(stepTime); // * 0.001f to turn milliseconds into seconds
                 _stepTimer?.Start();
                 _stepTimer.OnTimerStop += _currentStep.IncrementCurrentStepIndex;
                 _stepTimer.OnTimerTick += SetTimerProgressToData;
@@ -124,9 +131,10 @@ namespace Manager.Runtime
         private void SetTimerProgressToData(float progress)
         {
             // if (_stepTimer == null) return;
-            
-            _currentStep.CurrentStepProgress = 1f - progress;
-            Info($"Timer running with progress {progress} || Step index: {_currentStep.CurrentStepIndex}", this);
+            var fromZeroToOne = 1f - progress;
+            _currentStep.CurrentStepProgress = Mathf.Clamp01(fromZeroToOne);
+            // _currentStep.CurrentStepProgress = fromZeroToOne;
+            Info($"Timer running with progress {_currentStep.CurrentStepProgress} || Step index: {_currentStep.CurrentStepIndex}", this);
         }
 
         private void SubscribeToInputEvents()
