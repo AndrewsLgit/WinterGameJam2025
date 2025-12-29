@@ -49,6 +49,30 @@ MonoBehaviour:
   _error: 0
   <SpawnEvent>k__BackingField:
   - <StepSpawnIndex>k__BackingField: 0
+    <Prefab>k__BackingField: {fileID: 1012856464169226397, guid: 4d63099a31c6bbd4db463d68133ce99a, type: 3}
+    <StepDisappearIndex>k__BackingField: 0
+  - <StepSpawnIndex>k__BackingField: 0
+    <Prefab>k__BackingField: {fileID: 8238366304359305108, guid: 1e1298b1674237c4195bd2a6a05cca7a, type: 3}
+    <StepDisappearIndex>k__BackingField: 0
+  - <StepSpawnIndex>k__BackingField: 0
+    <Prefab>k__BackingField: {fileID: 304218131410251753, guid: b7defe7942f4e5543aabb10455078507, type: 3}
+    <StepDisappearIndex>k__BackingField: 0
+  - <StepSpawnIndex>k__BackingField: 0
+    <Prefab>k__BackingField: {fileID: 8792526026404027799, guid: abdbb930e73235c4289f44e97f274cbb, type: 3}
+    <StepDisappearIndex>k__BackingField: 0
+  - <StepSpawnIndex>k__BackingField: 0
     <Prefab>k__BackingField: {fileID: 0}
+    <StepDisappearIndex>k__BackingField: 0
+  - <StepSpawnIndex>k__BackingField: 0
+    <Prefab>k__BackingField: {fileID: 0}
+    <StepDisappearIndex>k__BackingField: 0
+  - <StepSpawnIndex>k__BackingField: 0
+    <Prefab>k__BackingField: {fileID: 4698071407444064507, guid: 1a54e18551684ae4f8a7c696e43957f4, type: 3}
+    <StepDisappearIndex>k__BackingField: 0
+  - <StepSpawnIndex>k__BackingField: 0
+    <Prefab>k__BackingField: {fileID: 6542493685011630825, guid: 3e6af49cc611ef84d9a8df32b5760288, type: 3}
+    <StepDisappearIndex>k__BackingField: 0
+  - <StepSpawnIndex>k__BackingField: 0
+    <Prefab>k__BackingField: {fileID: 4701666080541771396, guid: e69522a23364fb24abca6dbfc9251efe, type: 3}
     <StepDisappearIndex>k__BackingField: 0
   _currentStep: {fileID: 11400000, guid: 28f6a9c3e0f864419a61dd2477c8e742, type: 2}
