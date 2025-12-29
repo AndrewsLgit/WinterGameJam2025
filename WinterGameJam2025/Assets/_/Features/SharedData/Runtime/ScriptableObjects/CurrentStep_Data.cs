@@ -9,6 +9,7 @@ namespace SharedData.Runtime
         [field: SerializeField]
         public int CurrentStepIndex { get; private set; }
         public float CurrentStepDuration;
+        public float CurrentStepProgress;
         public bool IsStepComplete = false;
         
         public event Action OnCurrentStepComplete;
@@ -22,8 +23,9 @@ namespace SharedData.Runtime
         public void Reset()
         {
             CurrentStepIndex = 0;
-            CurrentStepDuration = 0f;
+            //CurrentStepDuration = 0f;
             IsStepComplete = false;
+            CurrentStepProgress = 0;
         }
     }
 }
