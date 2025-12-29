@@ -157,13 +157,13 @@ namespace Manager.Runtime
 
         private void InputRouter_OnRightStepTriggered(bool isBeingPressed)
         {
-
+            if (_currentStep.IsLeftStep) return;
             HandleTimer(isBeingPressed);
-            
         }
 
         private void InputRouter_OnLeftStepTriggered(bool isBeingPressed)
         {
+            if (!_currentStep.IsLeftStep) return;
             HandleTimer(isBeingPressed);
         }
 

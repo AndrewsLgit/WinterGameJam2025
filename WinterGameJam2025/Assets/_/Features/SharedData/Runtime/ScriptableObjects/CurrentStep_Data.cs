@@ -11,12 +11,14 @@ namespace SharedData.Runtime
         public float CurrentStepDuration;
         public float CurrentStepProgress;
         public bool IsStepComplete = false;
+        public bool IsLeftStep = true;
         
         public event Action OnCurrentStepComplete;
         
         public void IncrementCurrentStepIndex() 
         {
             CurrentStepIndex++;
+            IsLeftStep = !IsLeftStep;
             OnCurrentStepComplete?.Invoke();
         }
 

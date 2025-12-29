@@ -15,25 +15,25 @@ MonoBehaviour:
   StepDialogEvents:
   - <DialogNode>k__BackingField: {fileID: 11400000, guid: 626e2e5bbc93f415f99e8b3535f88f08, type: 2}
     <DialogEntryRange>k__BackingField:
-      <From>k__BackingField: 0
-      <To>k__BackingField: 0
+      <From>k__BackingField: 1
+      <To>k__BackingField: 3
     <DialogExitRange>k__BackingField:
-      <From>k__BackingField: 0
-      <To>k__BackingField: 0
+      <From>k__BackingField: 5
+      <To>k__BackingField: 8
     <TriggerPressure>k__BackingField: 0
   - <DialogNode>k__BackingField: {fileID: 11400000, guid: 6670873beb6b345c9825723f0c6a7472, type: 2}
     <DialogEntryRange>k__BackingField:
-      <From>k__BackingField: 0
-      <To>k__BackingField: 0
+      <From>k__BackingField: 10
+      <To>k__BackingField: 14
     <DialogExitRange>k__BackingField:
-      <From>k__BackingField: 0
-      <To>k__BackingField: 0
-    <TriggerPressure>k__BackingField: 0
+      <From>k__BackingField: 15
+      <To>k__BackingField: 20
+    <TriggerPressure>k__BackingField: 1000
   - <DialogNode>k__BackingField: {fileID: 11400000, guid: 4aab6474f2ec94891824ee0602653e08, type: 2}
     <DialogEntryRange>k__BackingField:
-      <From>k__BackingField: 0
-      <To>k__BackingField: 0
+      <From>k__BackingField: 22
+      <To>k__BackingField: 25
     <DialogExitRange>k__BackingField:
-      <From>k__BackingField: 0
-      <To>k__BackingField: 0
-    <TriggerPressure>k__BackingField: 0
+      <From>k__BackingField: 26
+      <To>k__BackingField: 35
+    <TriggerPressure>k__BackingField: 2000
