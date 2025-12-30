@@ -127,6 +127,7 @@ namespace Manager.Runtime
             _stepTimer.OnTimerTick -= SetTimerProgressToData;
             _stepTimer = null;
             _currentStep.IsWalking = false;
+            PlayRandomStepSound();
             
             Info($"Completed step, new index: {_currentStep.CurrentStepIndex}", this);
         }
@@ -179,11 +180,20 @@ namespace Manager.Runtime
             HandleTimer(isBeingPressed);
         }
 
+        private void PlayRandomStepSound()
+        {
+            var rnd = UnityEngine.Random.Range(0, _stepSounds.Length);
+            _stepAudioSource.clip = _stepSounds[rnd];
+            _stepAudioSource.Play(); 
+        }
+
         #endregion
 
         #region Private & Protected
 
         [SerializeField] private CurrentStep_Data _currentStep;
+        [SerializeField] private AudioSource _stepAudioSource;
+        [SerializeField] private AudioClip[] _stepSounds;
 
         private PlayerInputRouter _inputRouter;
         private float? _currentStepTimer;
