@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7475649564640770776}
   - component: {fileID: 2106505046317579292}
   m_Layer: 5
-  m_Name: UI_Tuto_Screen
+  m_Name: UI_End_Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 6627569054483010302}
   - component: {fileID: 3515201428188878498}
   m_Layer: 5
-  m_Name: tuto-screen
+  m_Name: end-screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 368916d00c56bfc44b5a95499deec62f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf3a43c19b0e19d40b01e609add81a83, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
