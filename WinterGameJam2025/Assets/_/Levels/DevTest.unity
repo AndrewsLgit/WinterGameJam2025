@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!20 &657934803 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 9212977464494996932, guid: bf944a98273796648af2b26b457ddb71, type: 3}
-  m_PrefabInstance: {fileID: 1188484651}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1012732164
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,98 +448,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 657934803}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[0].<StepSpawnIndex>k__BackingField
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[1].<StepSpawnIndex>k__BackingField
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[2].<StepSpawnIndex>k__BackingField
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[3].<StepSpawnIndex>k__BackingField
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[4].<StepSpawnIndex>k__BackingField
-      value: 44
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[5].<StepSpawnIndex>k__BackingField
-      value: 53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[6].<StepSpawnIndex>k__BackingField
-      value: 66
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[7].<StepSpawnIndex>k__BackingField
-      value: 74
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[8].<StepSpawnIndex>k__BackingField
-      value: 89
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[9].<StepSpawnIndex>k__BackingField
-      value: 104
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[10].<StepSpawnIndex>k__BackingField
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[0].<StepDisappearIndex>k__BackingField
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[1].<StepDisappearIndex>k__BackingField
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[2].<StepDisappearIndex>k__BackingField
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[3].<StepDisappearIndex>k__BackingField
-      value: 44
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[4].<StepDisappearIndex>k__BackingField
-      value: 53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[5].<StepDisappearIndex>k__BackingField
-      value: 66
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[6].<StepDisappearIndex>k__BackingField
-      value: 74
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[7].<StepDisappearIndex>k__BackingField
-      value: 89
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[8].<StepDisappearIndex>k__BackingField
-      value: 104
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[9].<StepDisappearIndex>k__BackingField
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
-      propertyPath: <SpawnEvent>k__BackingField.Array.data[10].<StepDisappearIndex>k__BackingField
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 2837725867671653543, guid: 5695088c3e904412e9266514169b86ab, type: 3}
       propertyPath: m_Name
       value: ---- Spawn Manager ----
