@@ -25,9 +25,15 @@ namespace SharedData.Runtime
 
         public void Reset()
         {
-            CurrentStepIndex = 0;
+            CurrentStepIndex = -1;
             IsWalking = false;
             CurrentStepProgress = 0;
+            CurrentStepDuration = 1000f;
+        }
+
+        private void OnDestroy()
+        {
+            Reset();
         }
     }
 }
