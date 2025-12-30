@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Foundation.Runtime;
 using SharedData.Runtime;
@@ -55,14 +54,30 @@ namespace Camera.Runtime
         #endregion
 
         #region Utils
-        
+
         private void StepData_OnCurrentStepComplete()
         {
             _pendingStepSpawn = true;
 
-            _isLookingDown = true;
-            _isForcingLookDown = true;
-            _lookForwardTime = _timeBeforeLookForward;
+            // If camera is already looking down, resolve
+            if (IsCameraLookingDown())
+            {
+                ResolvePendingStep();
+            }
+            else
+            {    
+                _isLookingDown = true;
+                _isForcingLookDown = true;
+                _lookForwardTime = _timeBeforeLookForward;
+            }
+        }
+
+        private void ResolvePendingStep()
+        {
+            if(!_pendingStepSpawn) return;
+            
+            SpawnStepAtLookPoint();
+            _pendingStepSpawn = false;
         }
 
         private void SpawnStepAtLookPoint()
@@ -110,13 +125,22 @@ namespace Camera.Runtime
             if (_isFirstStep)
                 return;
             
-            if (_isMovingForward)
-                return;
+            // if (_isMovingForward)
+            // return;
             
             _moveStartPos = transform.position;
-            _moveTargetPos = transform.position + transform.up * _moveDistance;
+            Vector3 planarForward = GetPlanarForward();
+            _moveTargetPos = transform.position + planarForward * _moveDistance;
             _moveProgress = 0f;
             _isMovingForward = true;
+        }
+
+        private Vector3 GetPlanarForward()
+        {
+            float yaw = transform.eulerAngles.y;
+            Vector3 forward = Quaternion.Euler(0f, yaw, 0f) * Vector3.forward;
+            
+            return forward.normalized;
         }
 
         private void UpdateSmoothMovement(float deltaTime)
@@ -201,17 +225,19 @@ namespace Camera.Runtime
             {
                 SmoothLookDown(deltaTime);
                 
-                float currentXAngle = NormalizeAngle(transform.eulerAngles.x);
-                if (MathF.Abs(currentXAngle - _downAngle) <= _lookDownCompleteThreshold)
+                // float currentXAngle = NormalizeAngle(transform.eulerAngles.x);
+                // if (Mathf.Abs(currentXAngle - _downAngle) <= _lookDownCompleteThreshold)
+                if (IsCameraLookingDown())
                 {
                     _isForcingLookDown = false;
 
-                    if (!_isForcingLookDown && _pendingStepSpawn)
-                    {
-                        SpawnStepAtLookPoint();
-                        // BeginSmoothMoveForward();
-                        _pendingStepSpawn = false;
-                    }
+                    ResolvePendingStep();
+                    // if (!_isForcingLookDown && _pendingStepSpawn)
+                    // {
+                    //     SpawnStepAtLookPoint();
+                    //     // BeginSmoothMoveForward();
+                    //     _pendingStepSpawn = false;
+                    // }
                 }
 
                 return;
@@ -230,6 +256,12 @@ namespace Camera.Runtime
             }
             
             _wasWalking = isWalkingNow;
+        }
+
+        private bool IsCameraLookingDown()
+        {
+            float currentXAngle = NormalizeAngle(transform.eulerAngles.x);
+            return Mathf.Abs(currentXAngle - _downAngle) <= _lookDownCompleteThreshold;
         }
 
         private float NormalizeAngle(float angle)
