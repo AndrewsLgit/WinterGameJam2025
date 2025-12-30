@@ -1926,6 +1926,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
+      propertyPath: <SpawnEvent>k__BackingField.Array.data[0].<StepDisappearIndex>k__BackingField
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
+      propertyPath: <SpawnEvent>k__BackingField.Array.data[10].<StepDisappearIndex>k__BackingField
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 2837725867671653543, guid: 5695088c3e904412e9266514169b86ab, type: 3}
       propertyPath: m_Name
       value: ---- Spawn Manager ----
