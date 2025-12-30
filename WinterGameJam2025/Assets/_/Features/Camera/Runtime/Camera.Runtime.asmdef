@@ -1,9 +1,11 @@
 {
-    "name": "SharedData.Runtime",
-    "rootNamespace": "SharedData.Runtime",
+    "name": "Camera.Runtime",
+    "rootNamespace": "Camera.Runtime",
     "references": [
-        "GUID:70ee7783ecf9646f99ae250415f2a80b",
-        "GUID:31e48787bc0904110bdf5f49ec673301"
+        "Foundation.Runtime",
+        "SharedData.Runtime",
+        "Manager.Runtime",
+        "Tools.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -92,6 +92,7 @@ namespace Manager.Runtime
                 
                 _stepTimer = new CountdownTimer(stepTime); // * 0.001f to turn milliseconds into seconds
                 _stepTimer?.Start();
+                _currentStep.IsWalking = true;
                 _stepTimer.OnTimerStop += _currentStep.IncrementCurrentStepIndex;
                 _stepTimer.OnTimerTick += SetTimerProgressToData;
 
@@ -104,6 +105,7 @@ namespace Manager.Runtime
             if (!isBeingPressed && _stepTimer != null)
             {
                 _stepTimer?.Pause();
+                _currentStep.IsWalking = false;
                 return;
             }
             
@@ -124,6 +126,7 @@ namespace Manager.Runtime
             _stepTimer.OnTimerStop -= _currentStep.IncrementCurrentStepIndex;
             _stepTimer.OnTimerTick -= SetTimerProgressToData;
             _stepTimer = null;
+            _currentStep.IsWalking = false;
             
             Info($"Completed step, new index: {_currentStep.CurrentStepIndex}", this);
         }
@@ -133,6 +136,7 @@ namespace Manager.Runtime
             // if (_stepTimer == null) return;
             var fromZeroToOne = 1f - progress;
             _currentStep.CurrentStepProgress = Mathf.Clamp01(fromZeroToOne);
+            _currentStep.IsWalking = true;
             // _currentStep.CurrentStepProgress = fromZeroToOne;
             Info($"Timer running with progress {_currentStep.CurrentStepProgress} || Step index: {_currentStep.CurrentStepIndex}", this);
         }

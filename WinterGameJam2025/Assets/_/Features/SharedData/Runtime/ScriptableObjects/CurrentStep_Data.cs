@@ -10,7 +10,7 @@ namespace SharedData.Runtime
         public int CurrentStepIndex { get; private set; }
         public float CurrentStepDuration;
         public float CurrentStepProgress;
-        public bool IsStepComplete = false;
+        public bool IsWalking = false;
         public bool IsLeftStep = true;
         
         public event Action OnCurrentStepComplete;
@@ -26,8 +26,7 @@ namespace SharedData.Runtime
         public void Reset()
         {
             CurrentStepIndex = 0;
-            //CurrentStepDuration = 0f;
-            IsStepComplete = false;
+            IsWalking = false;
             CurrentStepProgress = 0;
         }
     }
