@@ -39,6 +39,17 @@
                 },
                 {
                     "name": "",
+                    "id": "47e10089-79bc-4923-8db3-4963a6513519",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "WalkLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "afd80fc5-2313-4c4f-98f1-d1bc7cd8abf4",
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
@@ -52,6 +63,17 @@
                     "name": "",
                     "id": "8f3fc080-b27b-40b6-a7af-86263852c13b",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "WalkRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2fdd8165-8a7f-48f7-8224-e2386db73975",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
