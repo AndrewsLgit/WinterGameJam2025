@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3616901860448651237}
+  - component: {fileID: 6405484058149064548}
   - component: {fileID: 9212977464494996932}
   - component: {fileID: 4207194923029323579}
   - component: {fileID: 4616351725138644916}
@@ -38,6 +39,33 @@ Transform:
   - {fileID: 2975769852139721217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 8.913, y: 0, z: 0}
+--- !u!114 &6405484058149064548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053969739343084907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e4ebb356e3514494b9853267338f64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Camera.Runtime::Camera.Runtime.CameraBehaviour
+  _debug: 0
+  _warning: 0
+  _error: 0
+  _camera: {fileID: 9212977464494996932}
+  _stepData: {fileID: 11400000, guid: 28f6a9c3e0f864419a61dd2477c8e742, type: 2}
+  _leftStepPrefab: {fileID: 3344487133900634033, guid: e68ed050d720f52469e2bcc6a8f61822, type: 3}
+  _rightStepPrefab: {fileID: 6414981796214773080, guid: ce47ae71184073149b670afa0aef0475, type: 3}
+  _rotationSpeed: 3
+  _downAngle: 90
+  _forwardAngle: 9
+  _timeBeforeLookForward: 3
+  _lookDownCompleteThreshold: 1
+  _moveSpeed: 4
+  _moveDistance: 0.8
+  _offsetDistance: 0
 --- !u!20 &9212977464494996932
 Camera:
   m_ObjectHideFlags: 0
