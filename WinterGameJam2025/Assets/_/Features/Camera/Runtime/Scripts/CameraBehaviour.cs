@@ -26,6 +26,7 @@ namespace Camera.Runtime
             _isForcingLookDown = true;
             _isLookingDown = true;
             _lookForwardTime = 8f;
+            _isFirstStep = true;
         }
 
         private void Start()
@@ -68,18 +69,25 @@ namespace Camera.Runtime
         {
             var stepPrefab = _stepData.IsLeftStep ? _leftStepPrefab : _rightStepPrefab;
             var offset = _offsetDistance;
+            if (_isFirstStep) offset.z -= offset.z;
             offset.x = _stepData.IsLeftStep ? -offset.x : offset.x; 
             
             //transform.position += transform.up * _moveDistance;
 
-            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit))
+            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit, 1000, _groundLayerMask))
             {
+                Debug.DrawRay(_camera.transform.position, _camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 
                 Vector3 spawnPos = hit.point + offset;
                 _currentlySpawnedStep = Instantiate(stepPrefab, spawnPos, Quaternion.identity);
                 
                 CacheStepRenderer();
-                BeginSmoothMoveForward();
+                if (_isFirstStep)
+                {
+                    _isFirstStep = false;
+                }
+                else
+                    BeginSmoothMoveForward();
             }
         }
 
@@ -92,13 +100,16 @@ namespace Camera.Runtime
             Color color = _currentlySpawnedStepRenderer.material.color;
             color.a = 0f;
             _currentlySpawnedStepRenderer.material.color = color;
-            
+
             _activeStepRenderers.Add(_currentlySpawnedStepRenderer);
             
         }
 
         private void BeginSmoothMoveForward()
         {
+            if (_isFirstStep)
+                return;
+            
             if (_isMovingForward)
                 return;
             
@@ -240,6 +251,8 @@ namespace Camera.Runtime
         private GameObject _leftStepPrefab;
         [SerializeField] 
         private GameObject _rightStepPrefab;
+        [SerializeField] 
+        private LayerMask _groundLayerMask;
 
         [Header("Rotation Settings")] 
         [SerializeField] 
@@ -276,6 +289,7 @@ namespace Camera.Runtime
         private float _moveProgress;
         private bool _isMovingForward;
         private List<Renderer> _activeStepRenderers = new List<Renderer>();
+        private bool _isFirstStep;
 
         #endregion
     }
