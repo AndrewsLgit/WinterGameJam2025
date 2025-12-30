@@ -21,12 +21,16 @@ namespace Camera.Runtime
                 _camera = GetComponent<UnityEngine.Camera>();
 
             _baseLookDirection = transform.rotation;
+            
+            _pendingStepSpawn = true;
+            _isForcingLookDown = true;
+            _isLookingDown = true;
+            _lookForwardTime = 8f;
         }
 
         private void Start()
         {
             _stepData.OnCurrentStepComplete += StepData_OnCurrentStepComplete;
-            _stepData.IsWalking = true;
         }
 
         private void OnDestroy()
@@ -53,9 +57,11 @@ namespace Camera.Runtime
         
         private void StepData_OnCurrentStepComplete()
         {
-            // if (!_isLookingDown) return;
-
             _pendingStepSpawn = true;
+
+            _isLookingDown = true;
+            _isForcingLookDown = true;
+            _lookForwardTime = _timeBeforeLookForward;
         }
 
         private void SpawnStepAtLookPoint()
@@ -93,6 +99,9 @@ namespace Camera.Runtime
 
         private void BeginSmoothMoveForward()
         {
+            if (_isMovingForward)
+                return;
+            
             _moveStartPos = transform.position;
             _moveTargetPos = transform.position + transform.up * _moveDistance;
             _moveProgress = 0f;
@@ -169,7 +178,7 @@ namespace Camera.Runtime
         {
             bool isWalkingNow = _stepData.IsWalking;
 
-            if (isWalkingNow)
+            if (isWalkingNow && !_isForcingLookDown)
             {
                 _isLookingDown = true;
                 _isForcingLookDown = true;
@@ -186,9 +195,10 @@ namespace Camera.Runtime
                 {
                     _isForcingLookDown = false;
 
-                    if (_pendingStepSpawn)
+                    if (!_isForcingLookDown && _pendingStepSpawn)
                     {
                         SpawnStepAtLookPoint();
+                        // BeginSmoothMoveForward();
                         _pendingStepSpawn = false;
                     }
                 }
