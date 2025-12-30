@@ -61,7 +61,7 @@ MonoBehaviour:
   _rotationSpeed: 3
   _downAngle: 90
   _forwardAngle: 9
-  _timeBeforeLookForward: 3
+  _timeBeforeLookForward: 2
   _lookDownCompleteThreshold: 1
   _moveSpeed: 4
   _moveDistance: 0.8

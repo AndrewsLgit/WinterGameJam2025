@@ -3044,6 +3044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_night
       objectReference: {fileID: 0}
+    - target: {fileID: 5954892769821895435, guid: 17074de570eb20a49b7d83b303f916f2, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 77ea2482c0cbde24bb5bfd095050653a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6552968272409120799, guid: 17074de570eb20a49b7d83b303f916f2, type: 3}
