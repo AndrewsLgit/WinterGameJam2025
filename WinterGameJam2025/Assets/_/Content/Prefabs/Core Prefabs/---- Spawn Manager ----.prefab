@@ -48,38 +48,38 @@ MonoBehaviour:
   _warning: 0
   _error: 0
   <SpawnEvent>k__BackingField:
-  - <StepSpawnIndex>k__BackingField: 2
+  - <StepSpawnIndex>k__BackingField: 1
     <Prefab>k__BackingField: {fileID: 1012856464169226397, guid: 4d63099a31c6bbd4db463d68133ce99a, type: 3}
     <StepDisappearIndex>k__BackingField: 5
-  - <StepSpawnIndex>k__BackingField: 5
+  - <StepSpawnIndex>k__BackingField: 11
     <Prefab>k__BackingField: {fileID: 8238366304359305108, guid: 1e1298b1674237c4195bd2a6a05cca7a, type: 3}
-    <StepDisappearIndex>k__BackingField: 7
-  - <StepSpawnIndex>k__BackingField: 8
-    <Prefab>k__BackingField: {fileID: 304218131410251753, guid: b7defe7942f4e5543aabb10455078507, type: 3}
-    <StepDisappearIndex>k__BackingField: 10
-  - <StepSpawnIndex>k__BackingField: 10
-    <Prefab>k__BackingField: {fileID: 8792526026404027799, guid: abdbb930e73235c4289f44e97f274cbb, type: 3}
-    <StepDisappearIndex>k__BackingField: 14
-  - <StepSpawnIndex>k__BackingField: 12
-    <Prefab>k__BackingField: {fileID: 4207864183843685292, guid: 1ae58c647ef6b0b4fb75139f6473cce0, type: 3}
-    <StepDisappearIndex>k__BackingField: 16
-  - <StepSpawnIndex>k__BackingField: 16
-    <Prefab>k__BackingField: {fileID: 5341489010698964611, guid: 972995895590dd9439ce4c60d14ac071, type: 3}
-    <StepDisappearIndex>k__BackingField: 18
-  - <StepSpawnIndex>k__BackingField: 18
-    <Prefab>k__BackingField: {fileID: 4698071407444064507, guid: 1a54e18551684ae4f8a7c696e43957f4, type: 3}
-    <StepDisappearIndex>k__BackingField: 20
-  - <StepSpawnIndex>k__BackingField: 20
-    <Prefab>k__BackingField: {fileID: 6542493685011630825, guid: 3e6af49cc611ef84d9a8df32b5760288, type: 3}
     <StepDisappearIndex>k__BackingField: 22
   - <StepSpawnIndex>k__BackingField: 22
+    <Prefab>k__BackingField: {fileID: 304218131410251753, guid: b7defe7942f4e5543aabb10455078507, type: 3}
+    <StepDisappearIndex>k__BackingField: 34
+  - <StepSpawnIndex>k__BackingField: 34
+    <Prefab>k__BackingField: {fileID: 8792526026404027799, guid: abdbb930e73235c4289f44e97f274cbb, type: 3}
+    <StepDisappearIndex>k__BackingField: 43
+  - <StepSpawnIndex>k__BackingField: 43
+    <Prefab>k__BackingField: {fileID: 4207864183843685292, guid: 1ae58c647ef6b0b4fb75139f6473cce0, type: 3}
+    <StepDisappearIndex>k__BackingField: 52
+  - <StepSpawnIndex>k__BackingField: 52
+    <Prefab>k__BackingField: {fileID: 5341489010698964611, guid: 972995895590dd9439ce4c60d14ac071, type: 3}
+    <StepDisappearIndex>k__BackingField: 65
+  - <StepSpawnIndex>k__BackingField: 65
+    <Prefab>k__BackingField: {fileID: 4698071407444064507, guid: 1a54e18551684ae4f8a7c696e43957f4, type: 3}
+    <StepDisappearIndex>k__BackingField: 73
+  - <StepSpawnIndex>k__BackingField: 73
+    <Prefab>k__BackingField: {fileID: 6542493685011630825, guid: 3e6af49cc611ef84d9a8df32b5760288, type: 3}
+    <StepDisappearIndex>k__BackingField: 87
+  - <StepSpawnIndex>k__BackingField: 87
     <Prefab>k__BackingField: {fileID: 4701666080541771396, guid: e69522a23364fb24abca6dbfc9251efe, type: 3}
-    <StepDisappearIndex>k__BackingField: 24
-  - <StepSpawnIndex>k__BackingField: 24
+    <StepDisappearIndex>k__BackingField: 102
+  - <StepSpawnIndex>k__BackingField: 102
     <Prefab>k__BackingField: {fileID: 6997649384564267516, guid: 60619d36ab8b78b4dbb329ac1d5c0edd, type: 3}
-    <StepDisappearIndex>k__BackingField: 26
-  - <StepSpawnIndex>k__BackingField: 26
+    <StepDisappearIndex>k__BackingField: 108
+  - <StepSpawnIndex>k__BackingField: 108
     <Prefab>k__BackingField: {fileID: 805077600930030558, guid: cb11a38f77bf4a94a9094f5d9031739c, type: 3}
-    <StepDisappearIndex>k__BackingField: 30
+    <StepDisappearIndex>k__BackingField: 200
   _currentStepData: {fileID: 11400000, guid: 28f6a9c3e0f864419a61dd2477c8e742, type: 2}
   _camera: {fileID: 0}
