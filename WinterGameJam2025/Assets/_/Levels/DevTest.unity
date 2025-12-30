@@ -448,6 +448,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
+      propertyPath: <SpawnEvent>k__BackingField.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
+      propertyPath: <SpawnEvent>k__BackingField.Array.data[4].<Prefab>k__BackingField
+      value: 
+      objectReference: {fileID: 4207864183843685292, guid: 1ae58c647ef6b0b4fb75139f6473cce0, type: 3}
+    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
+      propertyPath: <SpawnEvent>k__BackingField.Array.data[9].<Prefab>k__BackingField
+      value: 
+      objectReference: {fileID: 6997649384564267516, guid: 60619d36ab8b78b4dbb329ac1d5c0edd, type: 3}
+    - target: {fileID: 1450863672896438853, guid: 5695088c3e904412e9266514169b86ab, type: 3}
+      propertyPath: <SpawnEvent>k__BackingField.Array.data[10].<Prefab>k__BackingField
+      value: 
+      objectReference: {fileID: 805077600930030558, guid: cb11a38f77bf4a94a9094f5d9031739c, type: 3}
     - target: {fileID: 2837725867671653543, guid: 5695088c3e904412e9266514169b86ab, type: 3}
       propertyPath: m_Name
       value: ---- Spawn Manager ----

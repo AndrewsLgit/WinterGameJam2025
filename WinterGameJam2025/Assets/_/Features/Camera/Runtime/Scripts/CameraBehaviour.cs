@@ -21,6 +21,11 @@ namespace Camera.Runtime
                 _camera = GetComponent<UnityEngine.Camera>();
 
             _baseLookDirection = transform.rotation;
+            
+            _pendingStepSpawn = true;
+            _isForcingLookDown = true;
+            _isLookingDown = true;
+            _lookForwardTime = 8f;
         }
 
         private void Start()
@@ -52,22 +57,25 @@ namespace Camera.Runtime
         
         private void StepData_OnCurrentStepComplete()
         {
-            // if (!_isLookingDown) return;
-
             _pendingStepSpawn = true;
+
+            _isLookingDown = true;
+            _isForcingLookDown = true;
+            _lookForwardTime = _timeBeforeLookForward;
         }
 
         private void SpawnStepAtLookPoint()
         {
             var stepPrefab = _stepData.IsLeftStep ? _leftStepPrefab : _rightStepPrefab;
-            var offset = _stepData.IsLeftStep ? -_offsetDistance : _offsetDistance;
+            var offset = _offsetDistance;
+            offset.x = _stepData.IsLeftStep ? -offset.x : offset.x; 
             
             //transform.position += transform.up * _moveDistance;
 
             if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit))
             {
 
-                Vector3 spawnPos = hit.point + transform.right * offset;
+                Vector3 spawnPos = hit.point + offset;
                 _currentlySpawnedStep = Instantiate(stepPrefab, spawnPos, Quaternion.identity);
                 
                 CacheStepRenderer();
@@ -91,6 +99,9 @@ namespace Camera.Runtime
 
         private void BeginSmoothMoveForward()
         {
+            if (_isMovingForward)
+                return;
+            
             _moveStartPos = transform.position;
             _moveTargetPos = transform.position + transform.up * _moveDistance;
             _moveProgress = 0f;
@@ -167,7 +178,7 @@ namespace Camera.Runtime
         {
             bool isWalkingNow = _stepData.IsWalking;
 
-            if (isWalkingNow)
+            if (isWalkingNow && !_isForcingLookDown)
             {
                 _isLookingDown = true;
                 _isForcingLookDown = true;
@@ -184,9 +195,10 @@ namespace Camera.Runtime
                 {
                     _isForcingLookDown = false;
 
-                    if (_pendingStepSpawn)
+                    if (!_isForcingLookDown && _pendingStepSpawn)
                     {
                         SpawnStepAtLookPoint();
+                        // BeginSmoothMoveForward();
                         _pendingStepSpawn = false;
                     }
                 }
@@ -249,7 +261,7 @@ namespace Camera.Runtime
         
         [Header("SpawnSettings")]
         [SerializeField, Tooltip("Offset from center of the camera")] 
-        private float _offsetDistance;
+        private Vector3 _offsetDistance;
         
         private GameObject _currentlySpawnedStep;
         private Renderer _currentlySpawnedStepRenderer;

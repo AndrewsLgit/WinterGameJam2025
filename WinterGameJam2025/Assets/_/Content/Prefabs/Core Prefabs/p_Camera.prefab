@@ -63,9 +63,9 @@ MonoBehaviour:
   _forwardAngle: 9
   _timeBeforeLookForward: 2
   _lookDownCompleteThreshold: 1
-  _moveSpeed: 4
-  _moveDistance: 0.8
-  _offsetDistance: 0
+  _moveSpeed: 3
+  _moveDistance: 1.5
+  _offsetDistance: {x: 0.1, y: 0, z: 1.9}
 --- !u!20 &9212977464494996932
 Camera:
   m_ObjectHideFlags: 0
