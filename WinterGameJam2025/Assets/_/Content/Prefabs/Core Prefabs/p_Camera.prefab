@@ -58,6 +58,9 @@ MonoBehaviour:
   _stepData: {fileID: 11400000, guid: 28f6a9c3e0f864419a61dd2477c8e742, type: 2}
   _leftStepPrefab: {fileID: 3344487133900634033, guid: e68ed050d720f52469e2bcc6a8f61822, type: 3}
   _rightStepPrefab: {fileID: 6414981796214773080, guid: ce47ae71184073149b670afa0aef0475, type: 3}
+  _groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
   _rotationSpeed: 3
   _downAngle: 90
   _forwardAngle: 9
